@@ -1,0 +1,5 @@
+add base config
+dockerize services
+add frontend
+add auth2
+add s3 storage
