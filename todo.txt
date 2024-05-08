@@ -1,3 +1,5 @@
+Implement POST video endpoint
+
 add base config
 dockerize services
 add frontend

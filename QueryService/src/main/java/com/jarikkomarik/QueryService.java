@@ -1,4 +1,4 @@
-package jarikkomarik;
+package com.jarikkomarik;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,8 +13,4 @@ public class QueryService {
         SpringApplication.run(QueryService.class, args);
     }
 
-    @GetMapping("hello")
-    public ResponseEntity<String> hello() {
-        return ResponseEntity.ok().body("Hello from QueryService");
-    }
 }
