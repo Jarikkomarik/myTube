@@ -1,2 +1,12 @@
 server:
   port: 8228
+
+spring:
+  codec:
+    max-in-memory-size: 1GB
+  webflux:
+    multipart:
+      max-in-memory-size: 1GB
+      max-parts: 100
+      max-disk-usage-per-part: 10MB # the default value is -1, which means the disk size is the limit.
+      max-headers-size: 5KB
