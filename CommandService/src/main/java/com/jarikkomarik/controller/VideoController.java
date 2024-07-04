@@ -1,10 +1,13 @@
 package com.jarikkomarik.controller;
 
-import com.jarikkomarik.interfaces.FileVideoService;
+import com.jarikkomarik.service.FileVideoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.codec.multipart.PartEvent;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 @RestController
@@ -13,11 +16,11 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class VideoController {
 
-    private final FileVideoService videoService;
+    private final FileVideoService fileVideoService;
 
 
     @PostMapping("upload")
     public Mono<String> uploadFile(@RequestBody Flux<PartEvent> partEvent) {
-        return videoService.processFileUpload(partEvent);
+        return fileVideoService.processFileUpload(partEvent);
     }
 }
